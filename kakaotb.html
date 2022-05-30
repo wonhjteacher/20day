@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <link href="css/kakao.css" rel="stylesheet">
-    <
+    <style>
+        .title_list a{pointer-events: none;}
     </style>
 </head>
 <body>
@@ -132,8 +133,31 @@
     </div>
 </div>
 <script>
+    const titleList= document.querySelector('.title_list');
+    const title= document.querySelectorAll('.title_list>li');
+    const contentBox= document.querySelector('.tab_contents');
+    const content= document.querySelectorAll('.tab_content');
 
+    titleList.addEventListener('click', e =>{
+        const selectedTitle =  e.target;
+        console.log(e.target)
+        title.forEach((ele)=>{   
+            ele.classList.remove('on');
+        })
+        e.target.classList.add('on');
+        selectedContent(selectedTitle) ;
+        //selectedContent호출 될때 클릭한 li 넘겨준다. 
+    })
 
+  
+    const selectedContent = (selectedTitle) => {
+        content.forEach((ele) => {
+            ele.style.display='none'
+        })
+        let titleIndex = selectedTitle.dataset.num;
+        console.log(titleIndex)
+        content[titleIndex].style.display='block'
+    }
 </script>
 </body>
 </html>
