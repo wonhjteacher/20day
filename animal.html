@@ -25,7 +25,7 @@
 <body>
 <div id="wrapper">
     <div class="cover">
-        <img src="img/animals/a.png" alt="" id="box">
+        <img src="img/animals/a.png" alt="" id="bigImg">
     </div>
     <ul class="animal">
         <li class="a01"><img src="img/animals/a01.png" alt=""></li>
@@ -37,9 +37,19 @@
     </ul>
 </div>
 <script>
+    const animals = document.querySelector('.animal');
+    const animal = document.querySelectorAll('.animal>li');
+    const cover = document.querySelector('.cover');
+    const bigImg = document.querySelector('#bigImg');
 
-
-
+    animals.addEventListener('click',e => {
+        const selected = e.target;
+        selectedTab(selected)  // 함수 호출 
+    })
+    //animals.addEventListener('click',function(e){})
+    const selectedTab = () =>{
+        
+    }
 </script>
 </body>
 </html>
