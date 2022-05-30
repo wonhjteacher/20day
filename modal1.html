@@ -5,6 +5,10 @@
     <title>Document</title>
     <style>
         @import url(css/reset.css);
+        
+        ::selection{  /* 블록색상 */
+            background-color: transparent
+        }
         #imgwrap{width: 600px;margin: 100px auto}
         .imgbox{display: flex;}
         .imgbox img{width:200px;}
@@ -35,12 +39,48 @@
 </body>
 
 <script>
+    const imgbox = document.querySelector('.imgbox');
+    const imglist = document.querySelectorAll('.imgsrc');
+    const modal = document.querySelector('#modal_bg');
+    const cngImg = document.querySelector('#cngImg');
+    const body = document.querySelector('body');
 
+    imgbox.addEventListener('click',(e) => {
+        const select = e.target; // 이미지 
+        let src=select.getAttribute('src');
+        cngImg.setAttribute('src',src);
+        modal.style.display='block';
+    })
+
+   /*  modal.addEventListener('click',() => {
+        modal.style.display='none'
+   }) */
   
-
+    body.addEventListener('click',(e)=>{
+        const selected=e.target;
+        let state = window.getComputedStyle(selected).display;
+        console.log(state)
+        if(state==='block' && !(selected.closest('#modal_center'))){
+            modal.style.display='none' 
+        }
+    })
+   
+   /* 
+    Element.closest()
+   https://developer.mozilla.org/ko/docs/Web/API/Element/closest
+    element.parentNode // 바로 위 부모 선택  요소,주석,줄바꿈 포함
+   */
 </script>
 </html>
 
+<!--
+//탭
+//모달
+//attribute 바꾸기 
+//아코디언메뉴
+//스크롤 
+//캐러셀 
+-->
 
 
 
