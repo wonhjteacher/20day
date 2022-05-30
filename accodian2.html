@@ -6,7 +6,6 @@
 		<meta charset="UTF-8">
 	</head>
 	<body>
-
     <div id="sun" class="star"></div>
     <div id="moon" class="star"></div>
 
@@ -34,8 +33,8 @@
                 <h2>Contact</h2>
                 <p class="acco-body">
                 <span> 
-                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-            </span>    
+                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                </span>    
             </p>
 			</li>
 
@@ -60,50 +59,7 @@
 		</ul>
 	</div>
     <script>
-       const star = document.querySelectorAll('.star') ; 
-       const body = document.querySelector('body')
-       const moon = document.querySelector('#moon')
-       const contentList = document.querySelector('.content_list')
-       const content = document.querySelectorAll('.content')
-       const contentP = document.querySelectorAll('.acco-body')
-       star.forEach((ele)=>{
-            ele.addEventListener('click', () => {
-                let isNight=body.classList.contains('night');
-                if(isNight){
-                    body.classList.remove('night');
-                    moon.classList.remove('on');
-                }else{
-                    body.classList.add('night');
-                    moon.classList.add('on');
-                }
-            })
-       })
-      
-       contentList.addEventListener('click', e => {
-                let isActive=e.target.classList.contains('active');
-                if(isActive){
-                  e.target.classList.remove('active');
-                  e.target.childNodes.forEach((ele,index)=>{
-                   if(ele.tagName==='P') {
-                        ele.classList.remove('open')
-                    }
-                  })
-               }else{
-                   
-                    content.forEach((ele)=>{
-                            ele.classList.remove('active');
-                    })
-                    e.target.classList.add('active'); 
 
-                    contentP.forEach((ele)=>{
-                         ele.classList.remove('open')
-                    })
-                    let index =e.target.dataset.num
-                    contentP[index].classList.add('open')
-                }
-            })
-
-
-       </script>
+    </script>
 	</body>
 </html>

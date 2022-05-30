@@ -59,6 +59,7 @@
     body.addEventListener('click',(e)=>{
         const selected=e.target;
         let state = window.getComputedStyle(selected).display;
+
         console.log(state)
         if(state==='block' && !(selected.closest('#modal_center'))){
             modal.style.display='none' 
