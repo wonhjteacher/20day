@@ -47,9 +47,23 @@
         selectedTab(selected)  // 함수 호출 
     })
     //animals.addEventListener('click',function(e){})
-    const selectedTab = () =>{
-        
+    const selectedTab = (selected) =>{
+        let bg =window.getComputedStyle(selected).backgroundColor;
+        console.log(bg) 
+        cover.style.backgroundColor=bg;
+        let src = selected.firstChild.getAttribute('src');
+        console.log(src)
+        bigImg.setAttribute('src',src)
+        //firstChild , lastChild , childNodes[0]
     }
+
 </script>
 </body>
 </html>
+
+<!-- 
+css 파일에 있는 스타일 값을 가져올 때 
+window.getComputedStyle(대상).스타일속성 
+도큐멘트오브젝트. style.스타일속성  => 인라인으로 적용되어 있을때 / 
+                                     주입할때 
+ -->
